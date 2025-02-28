@@ -1,29 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Login</h1>
-    <div>
-        <h2>Authentication Options</h2>
-        <a href="/auth/google">Login with Google</a><br>
-        <a href="/auth/apple">Login with Apple</a><br>
-        <a href="/auth/microsoft">Login with Microsoft</a>
-    </div>
-    <div>
-        <h2>Or Login with Email</h2>
-        <form action="/login" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="/register">Create one</a></p>
-    </div>
-</body>
-</html>
+import React from "react";
+
+// Apple Sign In Button
+import { Button } from "react-native";
+import { appleAuth } from "@invertase/react-native-apple-authentication";
+
+const AppleSignInButton = () => {
+    const onAppleButtonPress = async () => {
+            try {
+                const appleAuthRequestResponse = await appleAuth.performRequest({
+                requestedOperation: appleAuth.Operation.LOGIN,
+                requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME]
+            });
+    // Handle the response (e.g., authenticate the user with your server)
+        console.log(appleAuthRequestResponse);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    return (
+        <Button
+        title="Sign in with Apple"
+        onPress={onAppleButtonPress}
+        />
+    );
+};
+
+export default AppleSignInButton;
+
+// Google Sign In OAuth Provider
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <GoogleOAuthProvider clientId="YOUR_CLIENT_ID">
+        <App /> 
+    </GoogleOAuthProvider>
+);
+
+// Google Sign In Button
+import { GoogleLogin } from "@react-oauth/google";
+
+function SignIn() {
+    const handleSuccess = (credentialResponse) => {
+        console.log("Google login successful", credentialResponse);
+    };
+
+    const handleError = () => {
+        console.log("Google login failed");
+    };
+
+    return (
+        <GoogleLogin
+        onSuccess={handleSuccess}
+        onFailure={handleError}
+        />
+    );
+}
+// cusomtizable Google Sign In Button
+// import React from "react";
+// import { useGoogleLogin } from "@react-oauth/google";
+
+// function CustomLoginButton() {
+//     const googleLogin = useGoogleLogin({
+//         onSuccess: (tokenResponse) => {
+//             console.log("Google login successful", tokenResponse);
+//         },
+//         onError: () => {
+//             console.error("Google login failed");
+//         },
+//             flow: "auth-code" // Use 'auth-code' for the authorization code flow
+//         });
+
+//     return <button onClick={googleLogin}>Sign in with Google 🚀</button>;
+// }
+
+// Microsoft Sign In Button
+import { MsalProvider } from "@azure/msal-react";
+import msalConfig from "./authConfig";
+// initialize MSAL instance
+const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+function App() {
+    return (
+        <MsalProvider instance={msalInstance}>
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        </MsalProvider>
+    );
+}
+// create a sign-in button
+function SignInButton() {
+    const { instance } = useMsal();
+
+    const handleSignIn = () => {
+        instance.loginPopup({
+            scopes: ["user.read"]
+        })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    };
+
+    return <button onClick={handleSignIn}>Sign In with Microsoft</button>;
+}
+
+export default SignInButton;
+
+// add the button to the display
+import SignInButton from "./SignInButton";
+
+function App() {
+    return (
+        <div>
+        <SignInButton />
+        </div>
+    );
+}
+
+export default App;
