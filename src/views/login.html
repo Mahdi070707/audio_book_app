@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+    <meta name="appleid-signin-scope" content="[SCOPES]">
+    <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
+    <meta name="appleid-signin-state" content="[STATE]">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+    <style>
+    .signin-button {
+        width: 210px;
+        height: 40px;
+    }
+    </style>
 </head>
 <body>
     <h1>Login</h1>
     <div>
         <h2>Authentication Options</h2>
-        <div>
-            <h3>Login with Google</h3>
-            <a href="/auth/google">Login with Google</a>
-        </div>
-        <div>
-            <h3>Login with Apple</h3>
-            <a href="/auth/apple">Login with Apple</a>
-        </div>
+        <div class="g_id_signin" data-type="standard" data-shape="circle" data-theme="outline" data-text="sign_in_with" data-logo="SYMBOL" data-size="large" data-onsuccess="onSignIn"></div>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <div id="appleid-signin" class="signin-button" data-color="black" data-border="true" data-type="sign-in"></div>
+        <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
         <div>
             <h3>Login with Microsoft</h3>
             <a href="/auth/microsoft">Login with Microsoft</a>
