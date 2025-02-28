@@ -7,7 +7,6 @@ interface AccountDetails {
     email?: string;
     password?: string;
     userId?: string;
-    parentEmail?: string; // Add parentEmail field
 }
 
 async function createAccount(details: AccountDetails): Promise<void> {
@@ -66,7 +65,7 @@ async function hashPassword(password: string): Promise<string> {
     return await bcrypt.hash(password, saltRounds);
 }
 
-async function registerWithEmail(email: string, password: string, confirmPassword: string, parentEmail?: string): Promise<void> {
+async function registerWithEmail(email: string, password: string, confirmPassword: string): Promise<void> {
     if (await isUserRegistered(email)) {
         throw new Error('User is already registered');
     }
@@ -81,10 +80,5 @@ async function registerWithEmail(email: string, password: string, confirmPasswor
 
     const hashedPassword = await hashPassword(password);
     await signInWithEmail(email, hashedPassword);
-
-    if (parentEmail) {
-        console.log(`Kid's account registered under parent email: ${parentEmail}`);
-    }
-
     console.log('Registration successful');
 }
