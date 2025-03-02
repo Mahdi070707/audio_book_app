@@ -1,0 +1,26 @@
+# Ignore everything
+*.node_modules
+*.dist
+*.build
+*.out
+*.log
+*.tmp
+*.cache
+*.env
+*.local
+*.DS_Store
+*.vscode
+*.idea
+*.history
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Except these files
+!.gitignore
+!package.json
+!tsconfig.json
+!README.md
+!src/
+!src/**/*
