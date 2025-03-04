@@ -1,0 +1,48 @@
+:root {
+    --navy: #001f3f;
+    --cream: #f5f5dc;
+    --silver: #c0c0c0;
+}
+
+body, h1, p, nav, footer, a {
+    font-family: Arial, sans-serif;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--silver);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--navy);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--cream);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header {
+    background-color: var(--navy);
+    color: var(--cream);
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
