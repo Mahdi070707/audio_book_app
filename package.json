@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "yarn@1.22.19",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "start": "npm run build && vite preview",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "format": "prettier --write ."
+    "dev": "yarn vite",
+    "build": "yarn tsc -b && yarn vite build",
+    "start": "yarn build && yarn vite preview",
+    "lint": "yarn eslint .",
+    "preview": "yarn vite preview",
+    "format": "yarn prettier --write ."
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -34,6 +35,5 @@
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  },
-  "packageManager": "yarn@4.5.2+sha224.c2e2e9ed3cdadd6ec250589b3393f71ae56d5ec297af11cec1eba3b4"
+  }
 }

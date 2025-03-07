@@ -89,15 +89,6 @@ const Header: React.FC = () => {
                 Settings
               </Link>
             </li>
-            <li>
-              <Link
-                to="/welcome"
-                className="dropdown-item"
-                style={{ fontFamily: "Sublima" }}
-              >
-                Welcome
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
