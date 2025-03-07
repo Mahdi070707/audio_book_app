@@ -1,30 +1,39 @@
 {
-  "name": "Project2",
-  "version": "1.0.0",
-  "description": "A project for user authentication using various strategies (Google, Apple, Microsoft).",
-  "main": "src/login.ts",
+  "name": "my-audiobook-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "ts-node src/login.ts",
-    "build": "tsc"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "start": "npm run build && vite preview",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-apple": "^1.0.0",
-    "passport-microsoft": "^1.0.0",
-    "body-parser": "^1.19.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.0.0"
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.11",
-    "@types/passport": "^1.0.0",
-    "@types/passport-google-oauth20": "^2.0.0",
-    "@types/passport-apple": "^1.0.0",
-    "@types/passport-microsoft": "^1.0.0",
-    "@types/body-parser": "^1.19.0"
+    "@eslint/js": "^9.21.0",
+    "@types/bootstrap": "^5.2.10",
+    "@types/react": "^19.0.10",
+    "@types/react-bootstrap": "^0.32.37",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
   },
-  "author": "",
-  "license": "ISC"
+  "packageManager": "yarn@4.5.2+sha224.c2e2e9ed3cdadd6ec250589b3393f71ae56d5ec297af11cec1eba3b4"
 }

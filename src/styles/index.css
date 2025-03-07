@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Komtx";
+  src: url("../assets/KOMTXTKI.ttf") format("truetype");
+}
+@font-face {
+  font-family: "simple";
+  src: url("../assets/Simple Day.otf") format("truetype");
+}
+@font-face {
+  font-family: "Sublima";
+  src: url("../assets/Sublima-ExtraBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Muro";
+  src: url("../assets/Muroslant.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Kimberly";
+  src: url("../assets/Kimberley Bl.otf") format("opentype");
+}
+
+.header-font {
+  font-family: "Komtx", sans-serif;
+}
+
+.body-font {
+  font-family: "simple", sans-serif;
+}
+
+.category-font {
+  font-family: "Muro", sans-serif;
+}
+
+.ai-font {
+  font-family: "Kimberly", sans-serif;
+}
+
+.menu-font {
+  font-family: "Sublima", sans-serif;
+}
+
+:root {
+  --navy: #001f3f;
+  --cream: #f5f5dc;
+  --charcoal: #4a4a4a;
+  --burnt-orange: #cc5500;
+  --light-gray: #d3d3d3;
+}
+
+
+/* Hide Scrollbars but Allow Scrolling */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.ai-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--navy), var(--charcoal));
+  color: var(--cream);
+  font-family: "Kimberly", sans-serif;
+}
+
+.chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.message {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.ai-message {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.user-message .message-bubble {
+  background-color: var(--charcoal);
+  color: var(--cream);
+}
+
+.ai-message .message-bubble {
+  background-color: var(--cream);
+  color: var(--navy);
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background-color: var(--charcoal);
+}
+
+.input-group .form-control {
+  background-color: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  border-radius: 20px !important;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.input-group .btn {
+  background-color: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  border-radius: 20px !important;
+  padding: 8px 12px;
+}
+
+.input-group .btn:hover {
+  background-color: var(--cream);
+  color: var(--navy);
+}
+
+.card {
+  transition:
+    transform 0.4s ease-out,
+    box-shadow 0.4s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(245, 245, 220, 0.5);
+}
+
+.card:not(:hover) {
+  transition:
+    transform 0.8s ease-out,
+    box-shadow 0.8s ease-out;
+}
+
+footer {
+  background-color: var(--charcoal);
+  color: var(--cream);
+  text-align: center;
+  padding: 10px 0;
+}
