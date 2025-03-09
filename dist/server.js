@@ -1,8 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import sequelize from './config/database';
-import bookRoutes from './routes/bookRoutes';
+import sequelize from './config/database.js';
+import bookRoutes from './routes/bookRoutes.js';
+
+
 dotenv.config();
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
@@ -20,3 +22,4 @@ sequelize.sync().then(() => {
     });
 });
 export default app;
+
