@@ -12,7 +12,7 @@ export const books: Book[] = [
     title: "All The Light We Cannot See",
     author: "Anthony Doerr",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91DnTG7lJbL.jpg",
+      "https://m.media-amazon.com/images/I/81d2Gmv2zYL._SL1500_.jpg",
     rating: 4.6,
   },
   {
@@ -20,7 +20,7 @@ export const books: Book[] = [
     title: "Becoming",
     author: "Michelle Obama",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg",
+      "https://m.media-amazon.com/images/I/71rm0H5uOaL._SL1500_.jpg",
     rating: 4.8,
   },
   {
@@ -28,7 +28,7 @@ export const books: Book[] = [
     title: "Circe",
     author: "Madeline Miller",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81LBpKHHJpL.jpg",
+      "https://m.media-amazon.com/images/I/91AnXd9k-jL._SL1500_.jpg",
     rating: 4.4,
   },
   {
@@ -36,7 +36,7 @@ export const books: Book[] = [
     title: "Dune",
     author: "Frank Herbert",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91J4I6Gx6LL.jpg",
+      "https://m.media-amazon.com/images/I/71-1WBgjGoL._SL1500_.jpg",
     rating: 4.7,
   },
   {
@@ -44,7 +44,7 @@ export const books: Book[] = [
     title: "Educated",
     author: "Tara Westover",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81WojUxbbFL.jpg",
+      "https://m.media-amazon.com/images/I/61xta2jWBBL._SL1500_.jpg",
     rating: 4.7,
   },
   {
@@ -52,7 +52,7 @@ export const books: Book[] = [
     title: "Fahrenheit 451",
     author: "Ray Bradbury",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/71OFqSRFDgL.jpg",
+      "https://m.media-amazon.com/images/I/91DCLXhx2FL._SL1500_.jpg",
     rating: 4.6,
   },
   {
@@ -60,7 +60,7 @@ export const books: Book[] = [
     title: "Gone Girl",
     author: "Gillian Flynn",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81FJcIt0XfL.jpg",
+      "https://m.media-amazon.com/images/I/71XPY7U9OML._SL1500_.jpg",
     rating: 4.0,
   },
   {
@@ -68,7 +68,7 @@ export const books: Book[] = [
     title: "Homo Deus",
     author: "Yuval Noah Harari",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/71uAI28kJuL.jpg",
+      "https://m.media-amazon.com/images/I/81mpU5GWymL._SL1500_.jpg",
     rating: 4.5,
   },
   {
@@ -76,7 +76,7 @@ export const books: Book[] = [
     title: "Invisible Man",
     author: "Ralph Ellison",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91y3-KeOxkL.jpg",
+      "https://m.media-amazon.com/images/I/713IE+RqxbL._SL1500_.jpg",
     rating: 4.7,
   },
   {
@@ -84,7 +84,7 @@ export const books: Book[] = [
     title: "Jane Eyre",
     author: "Charlotte Brontë",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81++Q3jKqUL.jpg",
+    "https://m.media-amazon.com/images/I/912ezcwEg-L._SL1500_.jpg",
     rating: 4.6,
   },
   {
@@ -92,7 +92,7 @@ export const books: Book[] = [
     title: "Kafka on the Shore",
     author: "Haruki Murakami",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91ydRx6HGpL.jpg",
+      "https://m.media-amazon.com/images/I/A1Ii2pjpnuL._SL1500_.jpg",
     rating: 4.5,
   },
   {
@@ -100,7 +100,7 @@ export const books: Book[] = [
     title: "Les Misérables",
     author: "Victor Hugo",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL.jpg",
+      "https://m.media-amazon.com/images/I/71GsLnoTz-L._SL1400_.jpg",
     rating: 4.8,
   },
   {
@@ -108,7 +108,7 @@ export const books: Book[] = [
     title: "Moby Dick",
     author: "Herman Melville",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91j05e5NGSL.jpg",
+      "https://m.media-amazon.com/images/I/81MWn4aGHEL._SL1500_.jpg",
     rating: 4.4,
   },
   {
@@ -116,7 +116,7 @@ export const books: Book[] = [
     title: "Norwegian Wood",
     author: "Haruki Murakami",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81l3rZQFJ3L.jpg",
+      "https://m.media-amazon.com/images/I/91yqulrtzsL._SL1500_.jpg",
     rating: 4.3,
   },
   {
@@ -124,7 +124,7 @@ export const books: Book[] = [
     title: "On Earth We're Briefly Gorgeous",
     author: "Ocean Vuong",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/71Es+0FjbkL.jpg",
+      "https://m.media-amazon.com/images/I/81hIiFAl2EL._SL1500_.jpg",
     rating: 4.4,
   },
   {
@@ -132,79 +132,47 @@ export const books: Book[] = [
     title: "Pride and Prejudice",
     author: "Jane Austen",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91ArF0VtxLL.jpg",
+    "https://m.media-amazon.com/images/I/91bdi4YdErL._SL1500_.jpg",
     rating: 4.8,
   },
   {
     id: 17,
-    title: "Quiet",
-    author: "Susan Cain",
+    title: "The Introverted Leader ",
+    author: "Jennifer Kahnweiler",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81WRYj3hfKL.jpg",
+      "https://m.media-amazon.com/images/I/81KHi9SJscL._SL1500_.jpg",
     rating: 4.5,
   },
   {
     id: 18,
-    title: "Room",
-    author: "Emma Donoghue",
-    imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81DXP6Z4VQL.jpg",
-    rating: 4.4,
-  },
-  {
-    id: 19,
     title: "Sapiens",
     author: "Yuval Noah Harari",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg",
+      "https://m.media-amazon.com/images/I/81tPEe0egBL._SL1500_.jpg",
+    rating: 4.7,
+  },
+  {
+    id: 19,
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/91Ccq18dSuL._SL1500_.jpg",
     rating: 4.7,
   },
   {
     id: 20,
-    title: "The Alchemist",
-    author: "Paulo Coelho",
+    title: "Don’t Tell Me How to Die: A Novel",
+    author: "Marshall Karp",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg",
-    rating: 4.7,
+      "https://m.media-amazon.com/images/I/8107wumb6zL._SL1500_.jpg",
+    rating: 4.3,
   },
   {
     id: 21,
-    title: "The Book Thief",
-    author: "Markus Zusak",
-    imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81OxKt5Eh3L.jpg",
-    rating: 4.6,
-  },
-  {
-    id: 22,
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
-    rating: 4.3,
-  },
-  {
-    id: 23,
-    title: "The Da Vinci Code",
-    author: "Dan Brown",
-    imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/91u14XKO8qL.jpg",
-    rating: 4.5,
-  },
-  {
-    id: 24,
-    title: "The Elegance of the Hedgehog",
-    author: "Muriel Barbery",
-    imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81TK0fHCWWL.jpg",
-    rating: 4.3,
-  },
-  {
-    id: 25,
     title: "The Fault in Our Stars",
     author: "John Green",
     imageUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81AbJXWCxXL.jpg",
+      "https://m.media-amazon.com/images/I/81r9qAWEo4L._SL1500_.jpg",
     rating: 4.7,
   },
 ];

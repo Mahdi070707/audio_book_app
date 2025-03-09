@@ -4,18 +4,16 @@
 }
 @font-face {
   font-family: "simple";
-  src: url("../assets/Simple Day.otf") format("truetype");
+  src: url("../assets/Simple Day.otf") format("opentype");
 }
 @font-face {
   font-family: "Sublima";
   src: url("../assets/Sublima-ExtraBoldItalic.otf") format("opentype");
 }
-
 @font-face {
   font-family: "Muro";
   src: url("../assets/Muroslant.otf") format("opentype");
 }
-
 @font-face {
   font-family: "Kimberly";
   src: url("../assets/Kimberley Bl.otf") format("opentype");
@@ -24,31 +22,58 @@
 .header-font {
   font-family: "Komtx", sans-serif;
 }
-
 .body-font {
   font-family: "simple", sans-serif;
 }
-
 .category-font {
   font-family: "Muro", sans-serif;
 }
-
 .ai-font {
   font-family: "Kimberly", sans-serif;
 }
-
 .menu-font {
   font-family: "Sublima", sans-serif;
 }
 
+/* Light Mode Colors */
 :root {
   --navy: #001f3f;
   --cream: #f5f5dc;
   --charcoal: #4a4a4a;
   --burnt-orange: #cc5500;
   --light-gray: #d3d3d3;
+
+  /* Default Theme Variables */
+  --background: var(--cream);
+  --text-color: var(--charcoal);
+  --button-bg: var(--burnt-orange);
+  --input-bg: var(--light-gray);
 }
 
+/* Dark Mode Colors */
+[data-theme="dark"] {
+  --navy: #000c1a;
+  --cream: #e5e5c5;
+  --charcoal: #2e2e2e;
+  --burnt-orange: #a34200;
+  --light-gray: #a0a0a0;
+
+  --background: var(--navy);
+  --text-color: var(--cream);
+  --button-bg: var(--burnt-orange);
+  --input-bg: var(--charcoal);
+}
+
+/* General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: "simple", sans-serif;
+}
 
 /* Hide Scrollbars but Allow Scrolling */
 ::-webkit-scrollbar {
@@ -56,14 +81,7 @@
   height: 0;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-}
-
+/* Chat UI */
 .ai-container {
   display: flex;
   flex-direction: column;
@@ -79,7 +97,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
@@ -114,6 +132,7 @@ body {
   color: var(--navy);
 }
 
+/* Chat Input */
 .chat-input {
   display: flex;
   padding: 10px;
@@ -121,8 +140,8 @@ body {
 }
 
 .input-group .form-control {
-  background-color: var(--charcoal);
-  color: var(--cream);
+  background-color: var(--input-bg);
+  color: var(--text-color);
   border: none;
   border-radius: 20px !important;
   padding: 8px 15px;
@@ -130,8 +149,8 @@ body {
 }
 
 .input-group .btn {
-  background-color: var(--charcoal);
-  color: var(--cream);
+  background-color: var(--button-bg);
+  color: var(--text-color);
   border: none;
   border-radius: 20px !important;
   padding: 8px 12px;
@@ -142,10 +161,9 @@ body {
   color: var(--navy);
 }
 
+/* Cards */
 .card {
-  transition:
-    transform 0.4s ease-out,
-    box-shadow 0.4s ease-out;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 }
 
 .card:hover {
@@ -154,14 +172,63 @@ body {
 }
 
 .card:not(:hover) {
-  transition:
-    transform 0.8s ease-out,
-    box-shadow 0.8s ease-out;
+  transition: transform 0.8s ease-out, box-shadow 0.8s ease-out;
 }
 
+/* Footer */
 footer {
   background-color: var(--charcoal);
   color: var(--cream);
   text-align: center;
   padding: 10px 0;
 }
+
+/* Buttons */
+button {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Inputs and Selects */
+input, select, textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--light-gray);
+}
+
+/* Settings Container */
+.settings-container {
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%; /* Ensure the slide has a specific height if needed */
+}
+
+.book-slide {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-slide img {
+  max-width: 150px; /* Ensure the image does not exceed this width */
+  width: 100%; /* Makes the image responsive within the constraints */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.book-slide .header-font, .book-slide .body-font, .book-slide .small {
+  text-align: center;
+  width: 100%; /* Ensures text elements do not exceed the container width */
+}
+
