@@ -25,12 +25,17 @@ const AiPage: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
 
+    const SYSTEM_ROLE = "You are a helpful audiobook assistant. Please assist the user in finding books, suggesting audiobooks, and answering any questions about audiobooks.";
+
     try {
       const response = await axios.post(
         API_URL,
         {
           model: MODEL,
-          messages: [{ role: "user", content: input }],
+          messages: [
+            { role: "system", content: SYSTEM_ROLE },
+            { role: "user", content: input },
+          ],
         },
         {
           headers: {
