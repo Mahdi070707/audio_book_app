@@ -3,38 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "yarn@1.22.19",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "start": "npm run build && vite preview",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "format": "prettier --write ."
+    "dev": "yarn vite",
+    "build": "yarn tsc -b && yarn vite build",
+    "start": "yarn build && yarn vite preview",
+    "lint": "yarn eslint .",
+    "preview": "yarn vite preview",
+    "format": "yarn prettier --write ."
   },
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "^1.8.1",
-    "body-parser": "^1.19.0",
-    "dotenv": "^16.4.7",
-    "express": "^4.17.1",
-    "passport": "^0.4.1",
-    "passport-apple": "^1.0.0",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-microsoft": "^1.0.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.0.0"
-  },
-  "devDependencies": {
-    "@types/body-parser": "^1.19.0",
-    "@types/express": "^4.17.11",
-    "@types/passport": "^1.0.0",
-    "@types/passport-apple": "^1.0.0",
-    "@types/passport-google-oauth20": "^2.0.0",
-    "@types/passport-microsoft": "^1.0.0"
-  },
-  "author": "",
-  "license": "ISC"
-=======
+    "axios": "^1.8.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "react": "^19.0.0",
@@ -45,6 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/bootstrap": "^5.2.10",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-bootstrap": "^0.32.37",
     "@types/react-dom": "^19.0.4",
@@ -57,7 +37,5 @@
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  },
-  "packageManager": "yarn@4.5.2+sha224.c2e2e9ed3cdadd6ec250589b3393f71ae56d5ec297af11cec1eba3b4"
->>>>>>> 1dc338c4230159381f94e6c8b53dbc603cf3ccdb
+  }
 }
