@@ -1,7 +1,9 @@
 export interface Book {
-  id: number;
-  title: string;
-  author: string;
+  id: string;
+  title: string; 
+  author: string; 
+  image: string;
+  rating: number; 
 }
 
 export const books: Book[];

@@ -1,6 +1,9 @@
+// services/spotifyService.js
 import axios from 'axios';
 import dotenv from 'dotenv';
+
 dotenv.config();
+
 // Function to get Spotify access token
 const getSpotifyAccessToken = async () => {
     const tokenResponse = await axios.post('https://accounts.spotify.com/api/token', null, {
@@ -13,7 +16,8 @@ const getSpotifyAccessToken = async () => {
     });
     return tokenResponse.data.access_token;
 };
-// Function to search for audiobooks (or any specific type of content)
+
+// Function to search for audiobooks
 const searchAudiobooks = async (query) => {
     const token = await getSpotifyAccessToken();
     const response = await axios.get('https://api.spotify.com/v1/search', {
@@ -22,9 +26,10 @@ const searchAudiobooks = async (query) => {
         },
         params: {
             q: query,
-            type: 'album', // Adjust this for specific types like 'audiobook' if available
+            type: 'audiobook',
         },
     });
-    return response.data.albums.items; // Adjust this based on what data you need
+    return response.data.audiobooks.items;
 };
+
 export { searchAudiobooks };

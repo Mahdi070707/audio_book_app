@@ -35,7 +35,6 @@
   font-family: "Sublima", sans-serif;
 }
 
-/* Light Mode Colors */
 :root {
   --navy: #001f3f;
   --cream: #f5f5dc;
@@ -43,14 +42,12 @@
   --burnt-orange: #cc5500;
   --light-gray: #d3d3d3;
 
-  /* Default Theme Variables */
   --background: var(--cream);
   --text-color: var(--charcoal);
   --button-bg: var(--burnt-orange);
   --input-bg: var(--light-gray);
 }
 
-/* Dark Mode Colors */
 [data-theme="dark"] {
   --navy: #000c1a;
   --cream: #e5e5c5;
@@ -64,7 +61,6 @@
   --input-bg: var(--charcoal);
 }
 
-/* General Styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -75,13 +71,11 @@ html, body {
   font-family: "simple", sans-serif;
 }
 
-/* Hide Scrollbars but Allow Scrolling */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-/* Chat UI */
 .ai-container {
   display: flex;
   flex-direction: column;
@@ -161,7 +155,6 @@ html, body {
   color: var(--navy);
 }
 
-/* Cards */
 .card {
   transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 }
@@ -175,7 +168,6 @@ html, body {
   transition: transform 0.8s ease-out, box-shadow 0.8s ease-out;
 }
 
-/* Footer */
 footer {
   background-color: var(--charcoal);
   color: var(--cream);
@@ -183,7 +175,6 @@ footer {
   padding: 10px 0;
 }
 
-/* Buttons */
 button {
   background-color: var(--button-bg);
   color: var(--text-color);
@@ -194,14 +185,12 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Inputs and Selects */
 input, select, textarea {
   background-color: var(--input-bg);
   color: var(--text-color);
   border: 1px solid var(--light-gray);
 }
 
-/* Settings Container */
 .settings-container {
   min-height: 100vh;
   padding: 50px 0;
@@ -211,7 +200,7 @@ input, select, textarea {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  height: 100%; /* Ensure the slide has a specific height if needed */
+  height: 100%; 
 }
 
 .book-slide {
@@ -222,13 +211,13 @@ input, select, textarea {
 }
 
 .book-slide img {
-  max-width: 150px; /* Ensure the image does not exceed this width */
-  width: 100%; /* Makes the image responsive within the constraints */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 150px;
+  width: 100%; 
+  height: auto; 
 }
 
 .book-slide .header-font, .book-slide .body-font, .book-slide .small {
   text-align: center;
-  width: 100%; /* Ensures text elements do not exceed the container width */
+  width: 100%; 
 }
 

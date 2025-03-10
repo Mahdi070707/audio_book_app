@@ -3,18 +3,14 @@ import axios from "axios";
 import "../styles/index.css";
 
 const AiPage: React.FC = () => {
-  const [messages, setMessages] = useState<{ sender: string; text: string }[]>(
-    [],
-  );
+  const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
   const [input, setInput] = useState("");
   const chatEndRef = useRef<HTMLDivElement | null>(null);
 
   const API_URL = "https://api.deepseek.com/chat/completions";
   const MODEL = "deepseek-chat";
-  const DEEPSEEK_API_KEY = "sk-8be96cc5cd4c41c19aaecc522601c55d"
-  ;
+  const DEEPSEEK_API_KEY = "sk-8be96cc5cd4c41c19aaecc522601c55d";
 
-  // Auto-scroll
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -26,11 +22,12 @@ const AiPage: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
 
-    const SYSTEM_ROLE = "You are a helpful audiobook assistant. Please assist the user in finding books, suggesting audiobooks, and answering any questions about audiobooks.Also for any questions unrelated to audiobooks say Sorry that Is out of my reach.";
+    const SYSTEM_ROLE =
+      "You are a helpful audiobook assistant. Please assist the user in finding books, suggesting audiobooks, and answering any questions about audiobooks. Also, for any questions unrelated to audiobooks say 'Sorry, that is out of my reach.'";
 
     try {
       const response = await axios.post(
-        API_URL,  
+        API_URL,
         {
           model: MODEL,
           messages: [
@@ -54,13 +51,19 @@ const AiPage: React.FC = () => {
     }
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
   return (
     <div className="ai-container d-flex flex-column ai-font">
       <header className="text-light py-3 text-center menu-font">
-        <h2 className="fw-bold">audiophile AI</h2>
+        <h2 className="fw-bold">Audiophile AI</h2>
       </header>
 
-      {/* Chat Messages Area */}
       <div className="chat-box flex-grow-1 p-3">
         {messages.map((msg, index) => (
           <div
@@ -70,25 +73,25 @@ const AiPage: React.FC = () => {
             <div className="message-bubble">{msg.text}</div>
           </div>
         ))}
-        {/* auto-scroll */}
         <div ref={chatEndRef}></div>
       </div>
 
-      {/* Input Box */}
       <div className="chat-input bg-dark p-3">
-        <div className="input-group">
-          <input
-            type="text"
-            className="form-control bg-light text-dark"
-            placeholder="Type your message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-          />
-          <button className="btn btn-primary" onClick={handleSend}>
-            <i className="bi bi-send"></i>
-          </button>
-        </div>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Type your message..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyPress}
+          style={{
+            backgroundColor: "var(--cream)",
+            color: "black",
+            border: "1px solid var(--charcoal)",
+            borderRadius: "20px",
+            padding: "12px",
+          }}
+        />
       </div>
     </div>
   );

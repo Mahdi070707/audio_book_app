@@ -18,7 +18,7 @@ Book.init({
         type: DataTypes.STRING,
     },
     spotifyUrl: {
-        type: DataTypes.STRING, // ✅ Add spotifyUrl here
+        type: DataTypes.STRING,
         allowNull: true,
     },
     isbn: {

@@ -1,56 +1,87 @@
 import React, { useState } from "react";
-import { books, Book } from "../data/books";
+import axios from "axios";
 import BookCard from "../components/BookCard";
-import Modal from "../components/Modal";
+import BookModal from "../components/Modal";
+
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+  image: string;
+  rating: number;
+  spotifyUrl?: string;
+}
 
 const Catalog: React.FC = () => {
+  const [query, setQuery] = useState("");
+  const [books, setBooks] = useState<Book[]>([]);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
-  const handleBookClick = (book: Book) => {
-    setSelectedBook(book);
-    setModalOpen(true);
+  const handleSearch = async () => {
+    if (!query.trim()) return;
+    try {
+      const response = await axios.get(`http://localhost:3001/api/books?query=${encodeURIComponent(query)}`);
+      console.log("API full response:", response.data);
+      setBooks(Array.isArray(response.data) ? response.data : []);
+    } catch (error) {
+      console.error("API call error:", error);
+      setBooks([]);
+    }
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value.toLowerCase());
-  };
-
-  const filteredBooks = books.filter(
-    (book) =>
-      book.title.toLowerCase().includes(searchQuery) ||
-      book.author.toLowerCase().includes(searchQuery)
-  );
 
   return (
-    <div className="container-fluid min-vh-100 d-flex flex-column align-items-center p-4" style={{ background: "linear-gradient(to bottom, var(--navy), var(--dark-gray))" }}>
-      <input
-        type="text"
-        className="form-control mb-4 w-50 text-center border-0 shadow-sm"
-        style={{ backgroundColor: "var(--light-gray)", color: "var(--charcoal)", borderRadius: "8px" }}
-        placeholder="Search Books..."
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
-      <div className="row g-4 justify-content-center w-100" style={{ maxWidth: "80%", margin: "0 auto" }}>
-        {filteredBooks.map((book, index) => (
-          <div key={index} className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
+    <div className="container my-4">
+      <div className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search for audiobooks"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyPress} 
+          style={{
+            backgroundColor: "var(--cream)",
+            color: "black",
+            border: "1px solid var(--charcoal)",
+            padding: "10px",
+          }}
+        />
+      </div>
+
+      <div className="row">
+        {Array.isArray(books) && books.length > 0 ? (
+          books.map((book) => (
+            <div className="col-md-4 mb-3" key={book.id}>
               <BookCard
                 title={book.title}
                 author={book.author}
                 rating={book.rating}
-                onClick={() => handleBookClick(book)}
+                image={book.image}
+                onClick={() => {
+                  setSelectedBook(book);
+                  setShowModal(true);
+                }}
               />
             </div>
-        ))}
+          ))
+        ) : (
+          <p></p>
+        )}
       </div>
+
       {selectedBook && (
-        <Modal show={isModalOpen} onClose={closeModal} book={selectedBook} />
+        <BookModal
+          show={showModal}
+          onClose={() => setShowModal(false)}
+          book={selectedBook}
+        />
       )}
     </div>
   );

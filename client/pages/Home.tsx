@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setSliderLoaded(true);
-    }, 100); // Adjust delay if needed to ensure everything loads
+    }, 100); 
   }, []);
 
   const sliderSettings = {
