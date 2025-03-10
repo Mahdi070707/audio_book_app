@@ -1,5 +1,5 @@
 import React from "react";
-import { renderStars } from "../utils";
+import { renderStars } from "../../client/utils";
 
 interface BookCardProps {
   title: string;

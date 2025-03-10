@@ -11,7 +11,8 @@ const AiPage: React.FC = () => {
 
   const API_URL = "https://api.deepseek.com/chat/completions";
   const MODEL = "deepseek-chat";
-  const DEEPSEEK_API_KEY = import.meta.env.VITE_DEEPSEEK_API_KEY;
+  const DEEPSEEK_API_KEY = "sk-8be96cc5cd4c41c19aaecc522601c55d"
+  ;
 
   // Auto-scroll
   useEffect(() => {
@@ -25,11 +26,11 @@ const AiPage: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
 
-    const SYSTEM_ROLE = "You are a helpful audiobook assistant. Please assist the user in finding books, suggesting audiobooks, and answering any questions about audiobooks.";
+    const SYSTEM_ROLE = "You are a helpful audiobook assistant. Please assist the user in finding books, suggesting audiobooks, and answering any questions about audiobooks.Also for any questions unrelated to audiobooks say Sorry that Is out of my reach.";
 
     try {
       const response = await axios.post(
-        API_URL,
+        API_URL,  
         {
           model: MODEL,
           messages: [

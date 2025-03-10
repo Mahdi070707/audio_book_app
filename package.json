@@ -5,11 +5,10 @@
   "type": "module",
   "packageManager": "yarn@1.22.19",
   "scripts": {
-    "dev": "yarn vite",
-    "build": "yarn tsc -b && yarn vite build",
-    "start": "yarn build && yarn vite preview",
+    "dev": "concurrently \"yarn --cwd server dev\" \"yarn --cwd client dev\"",
+    "build": "yarn --cwd client build",
+    "start": "yarn --cwd client start",
     "lint": "yarn eslint .",
-    "preview": "yarn vite preview",
     "format": "yarn prettier --write ."
   },
   "dependencies": {
@@ -32,6 +31,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
